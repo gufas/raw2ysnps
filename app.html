@@ -18,11 +18,9 @@
 
 	<button type="submit" onclick="start()">Analyze</button>
 	<br>
-	<p>Positive:</p>
-	<output id="pos"></output>
-	<p>Negative:</p>
-	<output id="ngs"></output>
-	<p>No call:</p>
+	<p id="results"></p>
+	<output id="res"></output>
+	<p id="nocall"></p>
 	<output id="ncs"></output>
 	<!--	
 	<p>Error (del/ins, sequences are not supported:</p>
@@ -160,8 +158,9 @@
 					//error.sort(cmp);
 					console.log("display results");
 					//display results
-					document.getElementById('pos').textContent=makeList(positive, "+");
-					document.getElementById('ngs').textContent=makeList(negative, "-");
+					document.getElementById('results').textContent="Results (positive first):";	
+					document.getElementById('res').textContent=makeList(positive, "+")+", "+ makeList(negative, "-");
+					document.getElementById('nocall').textContent="No call:";					
 					document.getElementById('ncs').textContent=makeList(nocall, "");
 					//document.getElementById('err').textContent=makeList(error);
 				});
@@ -185,4 +184,3 @@
 		
 	</script>
 </html>
-
