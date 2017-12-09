@@ -109,7 +109,7 @@
 
 		function makeList(array, sign) {
     		var list = array[0]+sign;
-    		for(var i = 1; i < array.length; i++) {
+    		for(var i = 1; i < array.length; ++i) {
         		list += ", " + array[i]+sign;
     		}
     		return list;
@@ -146,6 +146,9 @@
 										//error.push(db[i][0]);
 										break;
 								}
+								raw.splice(j,1);
+								--j; 
+								break;
 							}
 						}
 					}
